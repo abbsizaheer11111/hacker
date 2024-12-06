@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="5; url=https://mail.google.com/" />
+  <title>Redirecting...</title>
+  <script>
+    let redirects = [
+      "https://mail.google.com/", // Gmail
+      "https://www.tiktok.com/", // TikTok
+      "https://www.instagram.com/" // Instagram
+    ];
+    let current = 0;
+
+    function redirectSequentially() {
+      if (current < redirects.length) {
+        setTimeout(() => {
+          window.location.href = redirects[current];
+          current++;
+          redirectSequentially(); // Call again for the next URL
+        }, 5000); // 5 seconds delay
+      }
+    }
+
+    window.onload = redirectSequentially;
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p>Aap pehle Gmail, phir TikTok, aur phir Instagram par jaenge. Agar automatic redirect nahi ho raha, to manually yeh URLs open karein:</p>
+  <ul>
+    <li><a href="https://mail.google.com/">Gmail</a></li>
+    <li><a href="https://www.tiktok.com/">TikTok</a></li>
+    <li><a href="https://www.instagram.com/">Instagram</a></li>
+  </ul>
+</body>
+</html>
